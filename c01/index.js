@@ -61,3 +61,6 @@ const funcDec = function () {
 funcDec();
 
 //Task -> make a function to sum up two numbers with the three types of functions
+//Extension -> calculator with options -> multiply, divide, sum, difference
+//First approach -> switch
+//Second approach -> if/else
