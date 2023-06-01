@@ -1,4 +1,5 @@
-const arr = ["a", 4, "b", 2, "c"];
+const arr = ["a", 4, "a", 2, "c"];
+//consist of strings and numbers
 
 //Arrays start from index 0;
 
@@ -15,9 +16,10 @@ const arr = ["a", 4, "b", 2, "c"];
 //   console.log("i", arr[i]);
 // }
 
-for (let i = arr.length - 1; i >= 0; i--) {
-  console.log("i", arr[i]);
-}
+//Loop the array in reverse
+// for (let i = arr.length - 1; i >= 0; i--) {
+//   console.log("i", arr[i]);
+// }
 
 // for (let el of arr) {
 //this for will read the values
@@ -32,20 +34,63 @@ for (let i = arr.length - 1; i >= 0; i--) {
 //All of the function methods bellow are loops
 // find, map, forEach, reduce, sort, filter
 
-//find -> finds the first in array and returns it
+//find -> finds the first in array and returns it that matches the condition
 const res = arr.find((el) => el === "a"); //returns the first element that has the condition achieved
 // const res = arr.find((el) => {
 //     return el;
 // });
-// console.log("res", res);
+
 const res2 = arr.find((el) => {
   if (el === "a") {
     return el;
   }
 });
-// console.log("res2", res2);
+
+//returns new(whole) array
+// const mapEl = arr.map((el) => {
+//   if (el === "a") return el;
+// });
+
+// const mapEl = arr.map((el) => el);
+// console.log("map El", mapEl);
+
+//forEach loops through the array and doesn't return a result
+// const loops = arr.forEach((el) => el);
+// console.log("loops", loops);
+
+const arrNums = [1, 2, 7, 10, 3, 4, 5, 6, 8, 9];
+
+// const reducer = arrNums.reduce((acc, curr) => acc + curr);
+// console.log("reducer", reducer);
+
+// const sortData = arrNums.sort((a, b) => {
+//   if (a < b) return -1;
+//   if (a > b) return 1;
+//   if (a === b) return 0;
+// });
+
+// console.log("sortData", sortData);
+
+// const filterData = arrNums.filter((el) => el > 5);
+
+// console.log("data", filterData);
 
 //() => {}
 //function testFun(){}
 //const fatArrow = () => {}
 //const funcDec = function() {}
+
+//Objects
+const student = {
+  grades: [7, 8, 10, 6, 6],
+  name: "Test User",
+  age: 20,
+  uni: "FINKI",
+  getAverageGrade: () => {},
+};
+
+//fetch
+
+//K, V
+
+//Write down the function for getting the average grade
