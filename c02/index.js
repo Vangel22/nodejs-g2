@@ -85,12 +85,53 @@ const student = {
   grades: [7, 8, 10, 6, 6],
   name: "Test User",
   age: 20,
-  uni: "FINKI",
-  getAverageGrade: () => {},
+  uni: {
+    name: "UKIM",
+    faculty: "FINKI",
+    subject: "Software Engineer",
+  },
+  getAverageGrade: () => {
+    let sum = 0;
+    for (let grade of student.grades) {
+      sum += grade;
+      //sum = sum + grade
+    }
+    return sum / student.grades.length;
+  },
 };
 
+// console.log(student.uni.faculty);
 //fetch
 
 //K, V
 
 //Write down the function for getting the average grade
+
+//Callback
+// const callMeBack = () => {
+//   console.log("Hi");
+// };
+
+// const greetMe = (fn) => {
+//   fn();
+// };
+
+// greetMe(callMeBack);
+
+function isEven(number) {
+  return number % 2 === 0;
+}
+
+function isOdd() {}
+
+function filter(numbers, fn) {
+  let results = [];
+  for (let num of numbers) {
+    if (fn(num)) {
+      results.push(num);
+    }
+  }
+  return results;
+}
+
+console.log(filter([1, 2, 3, 4, 5], isEven));
