@@ -134,7 +134,7 @@ function filter(numbers, fn) {
   return results;
 }
 
-console.log(filter([1, 2, 3, 4, 5], isEven));
+// console.log(filter([1, 2, 3, 4, 5], isEven));
 
 // Homework
 const studenti = [
@@ -175,3 +175,12 @@ const sorted = sumaZaGrad.sort((a, b) => {
 // 3. Првите 3 студенти кои имаат имиња од 5 карактери, подредени по просек.
 // 4. Градови подредени по групна висина на просек.
 // 5. Вкупен просек на студенти чие име завршува на а наспроти сите останати.
+
+const endsWithA = studenti.filter((stud) => stud.ime.endsWith("a")); //
+const notWithA = studenti.filter((stud) => !stud.ime.endsWith("a")); //
+
+const endsWithAAverage = endsWithA.reduce((acc, curr) => acc + curr.prosek);
+const notWithAAverage = notWithA.reduce((acc, curr) => acc + curr.prosek);
+
+console.log("a", endsWithAAverage);
+console.log("not a", notWithAAverage);
