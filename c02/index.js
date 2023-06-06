@@ -138,7 +138,7 @@ console.log(filter([1, 2, 3, 4, 5], isEven));
 
 // Homework
 const studenti = [
-  { ime: "Bojan", prosek: 7.5, grad: "Skopje" },
+  { ime: "Bojan", prosek: 7.5, grad: "Skopje" }, //[0] => {}
   { ime: "Pero", prosek: 8.3, grad: "Bitola" },
   { ime: "Janko", prosek: 6.9, grad: "Bitola" },
   { ime: "Vesna", prosek: 9.2, grad: "Skopje" },
@@ -149,6 +149,25 @@ const studenti = [
   { ime: "Natasha", prosek: 8.1, grad: "Skopje" },
   { ime: "Stanko", prosek: 7.2, grad: "Strumica" },
 ];
+
+//let sumaOdProsek = [0].prosek + [3].prosek + [8].prosek / 3
+
+let sumaZaGrad = [];
+for (let i = 0; i < studenti.length; i++) {
+  let sumaProsek = 0;
+  for (let j = 1; j < studenti.length; j++) {
+    if (studenti[i].grad === studenti[j].grad) {
+      sumaProsek += studenti[i].prosek;
+    }
+  }
+  sumaZaGrad.push({ grad: studenti[i].grad, prosek: sumaProsek });
+}
+
+const sorted = sumaZaGrad.sort((a, b) => {
+  if (a.prosek < b.prosek) return -1;
+  if (a.prosek > b.prosek) return 1;
+  return 0;
+});
 
 // Домашна
 // 1. Сите студенти од Скопје чие име завршува на а и имаат просек над 7, подредени по име (растечки).
