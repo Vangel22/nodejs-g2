@@ -45,3 +45,5 @@ fs.writeFile("greet.txt", "Hello Semos 2", { flag: "a" }, (error) => {
 //Task 1
 // 1. Make a file with your: fullname, age, profession
 // 2. Read that file and display the contents
+// Optional:
+// write and read should be in local modules and imported in
