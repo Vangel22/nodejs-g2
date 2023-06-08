@@ -176,11 +176,18 @@ const sorted = sumaZaGrad.sort((a, b) => {
 // 4. Градови подредени по групна висина на просек.
 // 5. Вкупен просек на студенти чие име завршува на а наспроти сите останати.
 
-const endsWithA = studenti.filter((stud) => stud.ime.endsWith("a")); //
-const notWithA = studenti.filter((stud) => !stud.ime.endsWith("a")); //
+const endsWithA = studenti.filter((stud) => stud.ime.endsWith("a"));
+const notWithA = studenti.filter((stud) => !stud.ime.endsWith("a"));
 
-const endsWithAAverage = endsWithA.reduce((acc, curr) => acc + curr.prosek);
-const notWithAAverage = notWithA.reduce((acc, curr) => acc + curr.prosek);
+console.log(endsWithA);
+console.log(notWithA);
+
+const endsWithAAverage = endsWithA.reduce((acc, curr) => {
+  return { prosek: acc.prosek + curr.prosek };
+});
+const notWithAAverage = notWithA.reduce((acc, curr) => {
+  return { prosek: acc.prosek + curr.prosek };
+});
 
 console.log("a", endsWithAAverage);
 console.log("not a", notWithAAverage);
