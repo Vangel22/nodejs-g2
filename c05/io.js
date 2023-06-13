@@ -26,7 +26,7 @@ const read = async () => {
 const write = async (data) => {
   return new Promise((resolve, reject) => {
     data = JSON.stringify(data);
-    fs.writeFile("data.json", (err) => {
+    fs.writeFile("data.json", data, (err) => {
       if (err) {
         return reject(err);
       } else {
