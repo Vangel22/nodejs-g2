@@ -7,7 +7,6 @@ const fs = require("fs");
 //reject(error) => where error is a argument from the readFile on fail
 
 //resolve and reject are callback arguments
-
 const read = async () => {
   //resolve is a function
   //reject is a function

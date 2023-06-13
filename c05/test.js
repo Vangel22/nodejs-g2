@@ -12,9 +12,9 @@ const {
     // let students = await getAllStudents();
     // console.log("allStudents", students);
 
-    // await editStudent(0, { surname: "Hristov" });
+    await editStudent(0, { surname: "Hristov" });
 
-    await deleteStudent(1);
+    // await deleteStudent(1);
 
     let studentsAfterUpdate = await getAllStudents();
     console.log("studentsAfterUpdate", studentsAfterUpdate);
