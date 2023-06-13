@@ -28,7 +28,9 @@ const editStudent = async (studentIndex, studentNewData) => {
         ...studentNewData,
       };
     }
+    return student;
   });
+  await write(students);
 };
 
 //Create, read, update, delete

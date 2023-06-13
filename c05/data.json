@@ -1,1 +1,4 @@
-[{"name":"Vangel","age":23},{"name":"Pero","surname":"Perovski","age":"2002"}]
+[
+    { "model": "Mercedes C", "year": 2022, "id": 505},
+    { "model": "Audi A1", "year": 2022, "id": 2}
+]
