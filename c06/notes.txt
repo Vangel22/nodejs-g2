@@ -1,0 +1,26 @@
+//http, https
+
+// request -> initiated by client
+// response -> data or error returned by server
+
+// Client-server architecture
+
+// Http request methods
+// 1. GET -> no body, has path for requesting data from server -> READ EXISTING DATA
+// 2. POST -> has body -> CREATE NEW ENTRY
+// 3. PUT -> has body -> UPDATE EXISTING ENTRY
+// 4. PATCH -> has body -> UPDATE EXISTING ENTRY PARTIALLY
+// 5. DELETE -> optional body -> DELETE AN ENTRY
+
+// const car = {
+//   brand: "VW",
+//   year: 2020,
+// };
+
+// function update({ brand: "BMW" }) {}
+
+// 100 - Information
+// 200 - Success
+// 300 - Redirect messages
+// 400 - Client error messages
+// 500 - Server error messages
