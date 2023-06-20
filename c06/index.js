@@ -20,15 +20,23 @@ const obj = {
   year: "2023",
 };
 
+// const server = http.createServer((req, res) => {
+//   res.writeHead(200, { "Content-type": "text/html" }); //HTTP/1.1 200 OK
+//   const q = url.parse(req.url, true).query; //after question mark everything is query string
+//   const txt = q.year + " " + q.month + " " + q.quarter;
+//   res.end(txt);
+// });
+
 const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-type": "text/html" }); //HTTP/1.1 200 OK
-  const q = url.parse(req.url, true).query; //after question mark everything is query string
-  const txt = q.year + " " + q.month + " " + q.quarter;
-  res.end(txt);
+  res.writeHead(200, { "Content-type": "text/html" });
+  res.end("<h1>Hello student</h1>");
 });
 
 server.listen(8080);
 
-// Task
-// 1. Get your name, surname and year of birth
-// 2. Display it on server
+// Homework
+// 1. Home - display data for cars, books, cities
+// 2. Cars - route with query to display singleCar
+// 3. Fetch and display users from
+// https://jsonplaceholder.typicode.com/users
+// 4. Optional - HTML
