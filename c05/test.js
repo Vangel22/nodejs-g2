@@ -3,6 +3,7 @@ const {
   addNewStudent,
   deleteStudent,
   editStudent,
+  getSingleStudent,
 } = require("./students");
 
 //IIFE
@@ -12,12 +13,12 @@ const {
     // let students = await getAllStudents();
     // console.log("allStudents", students);
 
-    await editStudent(0, { surname: "Hristov" });
+    // await editStudent(0, { surname: "Hristov" });
 
     // await deleteStudent(1);
 
-    let studentsAfterUpdate = await getAllStudents();
-    console.log("studentsAfterUpdate", studentsAfterUpdate);
+    let student = await getSingleStudent(505);
+    console.log("student", student);
   } catch (err) {
     console.log("Error", err);
   } finally {

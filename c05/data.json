@@ -1,4 +1,4 @@
 [
-    { "model": "Mercedes C", "year": 2022, "id": 505},
-    { "model": "Audi A1", "year": 2022, "id": 2}
+    { "name": "Vangel", "year": 1999, "id": 505},
+    { "name": "Aleksandar", "year": 2000, "id": 2}
 ]

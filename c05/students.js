@@ -4,6 +4,11 @@ const getAllStudents = async () => {
   return await read();
 };
 
+const getSingleStudent = async (id) => {
+  const student = await read();
+  return student.find((s) => s.id === id);
+};
+
 //create method
 const addNewStudent = async (newStudentData) => {
   let students = await read(); //students is an Array
@@ -40,4 +45,5 @@ module.exports = {
   addNewStudent,
   deleteStudent,
   editStudent,
+  getSingleStudent,
 };
