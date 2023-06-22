@@ -68,20 +68,54 @@ const server = http.createServer((req, res) => {
 
 // sobiranje/2/2 => 4
 
-const newServer = http.createServer((req, res) => {
-  const url = req.url; //req["url"]
-  const method = req.method;
+//handle functions
 
-  //get the data from the url
-  //Hint -> split -> [1] sobiranje [2] broj1 [3] broj2
-
-  //ako (sobiranje) togas vrati broj1 + broj2
-  //ako (odzemanje) togas vrati broj1 - broj2
-  //ako (mnozenje) togas vrati broj1 * broj2
-  //ako (delenje) togas vrati broj1 / broj2
-  //res.end(4);
-
+const handler = (req, res) => {
+  const url = req.url;
   console.log(url);
-});
+
+  //sobiranje/2/2
+  // " " / sobiranje / 2 / 2
+
+  //   const array = [1,2,3,4];
+  //   [a,b,c,d] = array;
+  const [_, op, num1, num2] = req.url.split("/");
+
+  const numTest = "1";
+  Number(numTest); //now numTest will be 1
+
+  const stringTest = 1;
+  stringTest.toString(); //"1"
+
+  let result;
+  switch (op) {
+    case "sobiranje":
+      result = Number(num1) + Number(num2);
+      res.end(`${result}`);
+      break;
+    case "odzemanje":
+      result = Number(num1) - Number(num2);
+      res.end(`${result}`);
+      break;
+    case "mnozenje":
+      result = Number(num1) * Number(num2);
+      res.end(`${result}`);
+      break;
+    case "delenje":
+      result = Number(num1) / Number(num2);
+      res.end(`${result}`);
+      break;
+    default:
+      res.end("OK");
+  }
+};
+
+const newServer = http.createServer(handler);
 
 newServer.listen(8080);
+
+//Homework
+//1. /home/vangel/hristov -> res.end("Vangel Hristov") -> first letter should be capital
+//2. /home/books/a -> res.end("Atomic Habits") -> all books starting with "a"
+//3. /home/books/1 -> res.end({ "title": "1984", id: 1, author: "George Orwell" })
+//   -> find the book with the given id
