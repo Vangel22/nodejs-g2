@@ -1,6 +1,7 @@
 // const http = require("http")
 // const url = require("url")
 const express = require("express");
+const { getCalculator, postCalculator } = require("./controllers/calculator");
 
 const app = express();
 
@@ -52,7 +53,31 @@ app.get("/calculator/:op/:a/:b", (req, res) => {
   }
 });
 
+app.get("/calculator", getCalculator);
+app.post("/calculator", postCalculator);
+
 app.listen(8080, (err) => {
   if (err) console.log("Greska", err);
   console.log("Server started at port 8080");
 });
+
+// const person = {
+//     name: "",
+//     surname: ""
+// }
+
+//  MVC
+// 1. Model -> data
+const cars = {
+  brand: "",
+  model: "",
+  yearOfProduction: "",
+};
+// 2. View -> client interaction
+//we fetch some data on frontend and
+//ex. cars.map(<li>car.brand</li>)
+// clicks one car and call cars/1 url (endpoint)
+// 3. Controller -> middleware between view and model, gets the events from view, manipulates the model
+// app.get("cars/:id", (req, res) => {
+//   fs.writeFile();
+// });
