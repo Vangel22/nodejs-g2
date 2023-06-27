@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/header',{ title: ime }); %>
+    <h3>Име и презиме: <%=ime%> <%=prezime%></h3>
+    <ul>
+        <% niza.forEach(grad =>{ %>
+        <li><%=grad %></li>
+        <% }); %>
+    </ul>
+    <table border="1" width="100%">
+        <tr>
+            <th>Име</th>
+            <th>Презиме</th>
+            <th>Просек</th>
+        </tr>
+        <% studenti.forEach(student => { %>
+            <tr>
+                <th> <%= student.ime %> </th>
+                <th> <%= student.prezime %> </th>
+                <th> <%= student.prosek %> </th>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+</html>
