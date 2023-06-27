@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
   res.render("index", data);
 });
 
-//display the new data by changing the fields in index.ejs
+//display the new data in index.ejs
 
 app.listen(8080, (err) => {
   if (err) console.log(err);
