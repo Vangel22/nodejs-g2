@@ -11,22 +11,52 @@ const getAnalysis = async (req, res) => {
 };
 
 const postAnalysis = async (req, res) => {
-  const { txt } = req.body;
+  const { txt } = req.body; //string
 
   if (!txt) {
     return res.status(400).send("Bad request");
   }
 
+  //Nie sme ucenici vo Semos. Ucime Nodejs vo 19:30 sekoj Vtornik. Cetvrtok ne ucevme.
+
   //   - вкупен број на карактери
+  const charLength = txt.length; //charLength = 5
+  const words = txt.split(" "); // ["Nie","sme", "ucenici", "vo", "Semos"]
   //   - вкупен број на зборови помали од 5 карактери
+  const wordLessThanFive = words.filter((word) => word.length < 5).length;
   //   - вкупен број на зборови поголеми од 5 карактери
+  const wordMoreThanFive = words.filter((word) => word.length > 5).length;
   //   - вкупен број на зборови еднакви на 5 карактери
+  const wordWithFive = words.filter((word) => word.length === 5).length;
   //   - број на реченици
+  const sentence = txt.split(".");
+  console.log("sentence", sentence);
   //   - број на зборови
   //   - број на зборови кои почнуваат на една од следниве букви: а, о, у, и, е
+  const wordsWithLetter = words.filter((word) => {
+    if (
+      word.startsWith("а") ||
+      word.startsWith("о") ||
+      word.startsWith("у") ||
+      word.startsWith("и") ||
+      word.startsWith("е")
+    )
+      return word;
+  });
+
+  const data = {
+    numChars: charLength,
+    lessThanFive: wordLessThanFive,
+    moreThanFive: wordMoreThanFive,
+    equalFive: wordWithFive,
+    sentenceLen: sentence.length,
+    wordLen: words.length,
+    wordsAEIOU: wordsWithLetter,
+  };
 
   try {
-    let output = await parseTemplate("analiza", { data: txt });
+    let output = await parseTemplate("analiza", { ...data });
+    console.log("output", output);
     res.send(output);
   } catch (err) {
     console.log(err);
@@ -48,6 +78,7 @@ const parseTemplate = async (template, data = null) => {
         if (data) {
           //false
           for (d in data) {
+            console.log("d", d);
             content = content.replaceAll(`{{${d}}}`, data[d]);
           }
         }
