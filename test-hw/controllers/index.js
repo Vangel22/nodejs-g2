@@ -54,6 +54,9 @@ const postAnalysis = async (req, res) => {
     wordsAEIOU: wordsWithLetter,
   };
 
+  //data.numChars
+  //data["numChars"]
+
   try {
     let output = await parseTemplate("analiza", { ...data });
     console.log("output", output);
@@ -78,7 +81,6 @@ const parseTemplate = async (template, data = null) => {
         if (data) {
           //false
           for (d in data) {
-            console.log("d", d);
             content = content.replaceAll(`{{${d}}}`, data[d]);
           }
         }
