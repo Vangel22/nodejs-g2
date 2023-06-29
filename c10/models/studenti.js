@@ -41,7 +41,7 @@ const remove = async (index) => {
   let file = await readFile();
   let fileData = JSON.parse(file);
   let newFileData = fileData.filter((_, i) => index !== i);
-  await writeFile(JSON.stringify(fileData)); //string to JSON
+  await writeFile(JSON.stringify(newFileData)); //string to JSON
 };
 
 const list = async () => {

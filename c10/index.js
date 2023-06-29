@@ -1,4 +1,10 @@
 const express = require("express");
+const {
+  getForm,
+  getBrishi,
+  postForm,
+  getStudenti,
+} = require("./controllers/formular");
 
 const app = express();
 
@@ -11,11 +17,13 @@ app.use(express.urlencoded({ extended: true })); //body-parser
 // "" or []
 app.use(express.static("public")); //React.js
 //public folder contains data that the server will not process
+//Static assets refer to files that are served to the
+//client without any modification by the server.
 
-// app.get("/form", getForm);
-// app.post("/form", postForm);
-// app.get("/studenti", getStudenti);
-// app.post("/brishi", getBrishi);
+app.get("/form", getForm);
+app.post("/form", postForm);
+app.get("/studenti", getStudenti);
+app.get("/brishi", getBrishi);
 
 // const array = [1, 2, 3, 4, 5];
 // array.map((_, index) => console.log(index));

@@ -24,7 +24,8 @@ const getStudenti = async (req, res) => {
 
 const getBrishi = async (req, res) => {
   // /studenti/test?i=1
-  await remove(req.query.i); //how will we name the var in ejs file
+  console.log("req query", req.query);
+  await remove(req.query.studentIndex); //how will we name the var in ejs file
   res.redirect("/studenti");
 };
 
