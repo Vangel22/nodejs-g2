@@ -4,6 +4,8 @@ const { getAnalysis, postAnalysis } = require("./controllers"); //this only work
 
 const app = express();
 
+app.set("view engine", "ejs");
+
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/analiza", getAnalysis);

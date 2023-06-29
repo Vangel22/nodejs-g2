@@ -2,8 +2,9 @@ const fs = require("fs");
 
 const getAnalysis = async (req, res) => {
   try {
-    let output = await parseTemplate("analiza-forma");
-    res.send(output);
+    // let output = await parseTemplate("analiza-forma");
+    // res.send(output);
+    res.render("analiza-forma");
   } catch (err) {
     console.log(err);
     res.status(500).send("Internal Server Error");
@@ -58,9 +59,9 @@ const postAnalysis = async (req, res) => {
   //data["numChars"]
 
   try {
-    let output = await parseTemplate("analiza", { ...data });
-    console.log("output", output);
-    res.send(output);
+    // let output = await parseTemplate("analiza", { ...data });
+    // console.log("output", output);
+    res.render("analiza", { ...data });
   } catch (err) {
     console.log(err);
     res.status(500).send("Internal Server Error");
