@@ -32,3 +32,7 @@ app.listen(10000, (err) => {
   if (err) console.log(err);
   console.log("Server stared at port: 10000");
 });
+
+// 1. In postForm method add - fakulteti property
+// 2. Add the field in "formular.ejs"
+// 3. Display fakulteti of a single student in "studenti.ejs"
